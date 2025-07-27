@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HappyCoolbar Fresh Design System - Refreshing colors and modern aesthetics */
+
+@layer base {
+  :root {
+    /* Fresh Background Colors */
+    --background: 180 30% 98%;
+    --foreground: 200 15% 15%;
+
+    /* Card Design */
+    --card: 0 0% 100%;
+    --card-foreground: 200 15% 15%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 15% 15%;
+
+    /* Primary - Fresh Lime Green */
+    --primary: 75 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 75 90% 60%;
+
+    /* Secondary - Cool Sky Blue */
+    --secondary: 195 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted - Light Cool Gray */
+    --muted: 200 20% 95%;
+    --muted-foreground: 200 15% 40%;
+
+    /* Accent - Vibrant Turquoise */
+    --accent: 180 75% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 200 20% 88%;
+    --input: 200 20% 92%;
+    --ring: 75 85% 45%;
+
+    /* Design System Enhancements */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(200 30% 98%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-card-hover: 0 8px 32px -4px hsl(var(--primary) / 0.2);
+    --shadow-elegant: 0 10px 40px -8px hsl(200 15% 15% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Background Colors */
+    --background: 210 15% 8%;
+    --foreground: 180 30% 95%;
+
+    /* Card Design - Dark */
+    --card: 210 15% 10%;
+    --card-foreground: 180 30% 95%;
+
+    /* Popover - Dark */
+    --popover: 210 15% 10%;
+    --popover-foreground: 180 30% 95%;
+
+    /* Primary - Keep Lime Green but adjusted for dark */
+    --primary: 75 85% 55%;
+    --primary-foreground: 210 15% 8%;
+    --primary-glow: 75 90% 70%;
+
+    /* Secondary - Cool Sky Blue for dark */
+    --secondary: 195 85% 70%;
+    --secondary-foreground: 210 15% 8%;
+
+    /* Muted - Dark Cool Gray */
+    --muted: 210 15% 15%;
+    --muted-foreground: 180 20% 65%;
+
+    /* Accent - Vibrant Turquoise for dark */
+    --accent: 180 75% 65%;
+    --accent-foreground: 210 15% 8%;
+
+    /* Destructive */
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 210 15% 8%;
+
+    /* UI Elements - Dark */
+    --border: 210 15% 20%;
+    --input: 210 15% 15%;
+    --ring: 75 85% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Product Card Styles */
+  .product-card {
+    @apply relative overflow-hidden rounded-2xl bg-card
+           border border-border/50 transition-all duration-300 ease-out
+           hover:scale-105 hover:shadow-[var(--shadow-card-hover)];
+    box-shadow: var(--shadow-card);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Admin Panel Styles */
+  .admin-panel {
+    @apply bg-gradient-to-br from-background via-background to-muted/30 
+           border-l border-border/50 shadow-xl;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    @apply bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 
+           relative overflow-hidden;
+  }
+
+  /* Section Headers */
+  .section-header {
+    @apply text-3xl font-bold text-foreground mb-6 
+           bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Fade-in Animation */
+  .fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .fade-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .fade-in-delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  .fade-in-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground 
+           hover:shadow-lg hover:scale-105 transition-all duration-300 
+           rounded-xl px-6 py-3 font-semibold;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary to-accent text-secondary-foreground 
+           hover:shadow-lg hover:scale-105 transition-all duration-300 
+           rounded-xl px-6 py-3 font-semibold;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
