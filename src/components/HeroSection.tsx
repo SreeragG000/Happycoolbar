@@ -30,17 +30,17 @@ export const HeroSection = ({ customBanner, onExploreMenu, onContactUs }: HeroSe
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="fade-in">
-          <div className="inline-block mb-6 float-animation">
+          <div className="inline-block mb-6 float-animation scale-in delay-200">
             <div className="text-6xl mb-4">🥤</div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-6 fade-in delay-300">
             HappyCoolbar
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed fade-in delay-400">
             Your favorite spot for refreshing drinks, delicious ice creams, and tasty snacks. 
             Fresh, cool, and always delightful!
           </p>
-          <div className="bg-primary/10 dark:bg-primary/20 rounded-2xl p-4 mb-8 inline-block border border-primary/20">
+          <div className="bg-primary/10 dark:bg-primary/20 rounded-2xl p-4 mb-8 inline-block border border-primary/20 scale-in delay-500">
             <p className="text-lg font-medium text-primary dark:text-primary-glow">
               🌾 GandhiGramam Products Available Here! 🌾
             </p>
@@ -48,7 +48,7 @@ export const HeroSection = ({ customBanner, onExploreMenu, onContactUs }: HeroSe
               Fresh, organic, and locally sourced products
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-600">
             <button className="btn-primary" onClick={onExploreMenu}>
               Explore Menu
             </button>
