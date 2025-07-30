@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Coffee } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.jpg";
 
 interface HeroSectionProps {
@@ -10,6 +11,8 @@ interface HeroSectionProps {
 export const HeroSection = ({ customBanner, onExploreMenu, onContactUs }: HeroSectionProps) => {
   const [imageError, setImageError] = useState(false);
   const bannerImage = customBanner || heroBanner;
+
+  console.log("HeroSection rendering - icon should be visible");
 
   return (
     <section className="hero-section relative py-20 px-6">
@@ -30,8 +33,8 @@ export const HeroSection = ({ customBanner, onExploreMenu, onContactUs }: HeroSe
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="fade-in">
-          <div className="inline-block mb-6 float-animation scale-in delay-200">
-            <div className="text-6xl mb-4">🥤</div>
+          <div className="flex items-center justify-center mb-6">
+            <Coffee size={28} className="text-primary" />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-6 fade-in delay-300">
             HappyCoolbar

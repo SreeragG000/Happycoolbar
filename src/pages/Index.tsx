@@ -4,7 +4,9 @@ import { ProductSection } from "@/components/ProductSection";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Product } from "@/components/ProductCard";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
 const Index = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
@@ -123,7 +125,10 @@ const Index = () => {
       <footer id="footer" className="bg-muted/30 py-12 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+            <h3 
+              className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2 cursor-pointer hover:scale-105 transition-transform duration-200"
+              onClick={() => navigate('/gopi')}
+            >
               HappyCoolbar
             </h3>
             <p className="text-muted-foreground">
