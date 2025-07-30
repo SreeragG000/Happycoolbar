@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Coffee } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.jpg";
 
 interface HeroSectionProps {
@@ -34,7 +33,7 @@ export const HeroSection = ({ customBanner, onExploreMenu, onContactUs }: HeroSe
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="fade-in">
           <div className="flex items-center justify-center mb-6">
-            <Coffee size={28} className="text-primary" />
+            <span className="text-5xl float-animation">🥤</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-6 fade-in delay-300">
             HappyCoolbar
